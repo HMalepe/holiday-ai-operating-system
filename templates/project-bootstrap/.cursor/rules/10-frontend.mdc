@@ -1,0 +1,16 @@
+---
+description: Frontend standards for React/Next.js UI work
+globs: ["**/*.tsx", "**/*.css", "src/app/**", "src/components/**"]
+alwaysApply: false
+---
+
+- Mobile-first: design at 375px, tap targets 44px or more, then scale up. Check 375, 768 and desktop before done.
+- Every screen defines four states: loading, empty, error, success. No blank panels.
+- One primary action per screen. Destructive actions need confirmation and look different.
+- Forms: inline validation, keep input on error, disable submit while pending, every input labelled.
+- TypeScript strict, no `any` without a comment. Server Components by default; `"use client"` only for interactivity.
+- Tailwind with shared tokens, no one-off magic numbers. Validate input with a zod schema shared with the backend.
+- Semantic HTML, alt text, contrast 4.5:1, keyboard operable with visible focus.
+- Format for South Africa: ZAR, `en-ZA`, explicit currency symbols.
+- Pick a clear visual direction before building screens; avoid the default-template look. Real copy, not lorem ipsum.
+- Budget: LCP under 2.5s on mid-range phone over 4G; no dependency over ~50 KB gzipped without a reason.

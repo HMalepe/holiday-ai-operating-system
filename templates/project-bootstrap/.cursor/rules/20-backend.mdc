@@ -1,0 +1,16 @@
+---
+description: Backend, database and integration standards
+globs: ["src/app/api/**", "src/server/**", "supabase/**", "**/*.sql"]
+alwaysApply: false
+---
+
+- Validate every input at the boundary with a schema; reject early with a clear 400.
+- Response shape: `{ "data": ..., "error": null }` or `{ "data": null, "error": { "code", "message", "details" } }`. Correct status codes.
+- Paginate every list endpoint. Never return unbounded lists.
+- Schema changes only via migrations committed to git. Every table has `id`, `created_at`, `updated_at` and an owner column for per-user data. Use foreign keys and constraints.
+- Row Level Security on every table with tested policies. "RLS off" is a defect.
+- Webhooks: verify the signature before parsing, respond 200 fast, process async, be idempotent (store event IDs).
+- Every outbound call has a timeout and capped exponential backoff. Slow work (over ~5s) leaves the request path.
+- Every external integration sits behind one module in `server/integrations/` so it can be mocked.
+- Structured JSON logs with a request ID. Never log secrets or full personal data (POPIA).
+- Service-role keys are server-only; never in client code or `NEXT_PUBLIC_*`.

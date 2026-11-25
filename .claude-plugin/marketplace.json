@@ -1,0 +1,14 @@
+{
+  "name": "holiday-ai-os",
+  "description": "Holiday's personal AI operating system: agents, skills and guard hooks for Claude Code.",
+  "owner": {
+    "name": "Holiday Malepe"
+  },
+  "plugins": [
+    {
+      "name": "holiday-os",
+      "source": "./",
+      "description": "Subagents, skills, guard hook and session brief that enforce Holiday's engineering standards in any project."
+    }
+  ]
+}

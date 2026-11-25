@@ -4,16 +4,17 @@ Entry point for any AI agent working with me. Read this first.
 
 ## Load order
 
-1. `intelligence/personal-profile.md`
-2. `intelligence/collaboration-principles.md`
-3. `intelligence/decision-framework.md`
-4. `intelligence/research-standards.md` (if the task involves looking things up)
-5. `engineering/*` (if the task involves code)
-6. The relevant `agents/` role and `workflows/` playbook for the task
+1. `intelligence/session-brief.md` (the compact version; the plugin injects it automatically)
+2. `intelligence/personal-profile.md`
+3. `intelligence/collaboration-principles.md`
+4. `intelligence/decision-framework.md`
+5. `intelligence/research-standards.md` (if the task involves looking things up)
+6. `engineering/*` (if the task involves code)
+7. The relevant `agents/` role and `workflows/` playbook for the task
 
 ## Using this from another project
 
-Add this to that project's `CLAUDE.md`:
+Best: install the `holiday-os` plugin and run `scripts/bootstrap-project.sh <project-dir>` (see `README.md`). Manual fallback, add this to that project's `CLAUDE.md`:
 
 ```md
 ## AI operating system

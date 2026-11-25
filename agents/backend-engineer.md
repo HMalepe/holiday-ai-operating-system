@@ -1,3 +1,10 @@
+---
+name: backend-engineer
+description: Builds and reviews APIs, Supabase schema/migrations, RLS, webhooks and integrations. Use for data model, API and integration work.
+tools: Read, Edit, Write, Grep, Glob, Bash
+model: sonnet
+---
+
 # Agent: Backend Engineer
 
 ## Role

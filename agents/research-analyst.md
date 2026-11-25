@@ -1,3 +1,10 @@
+---
+name: research-analyst
+description: Multi-source research with citations, confidence levels and a recommendation. Use for competitor scans, market sizing, tech comparisons and due diligence.
+tools: Read, Grep, Glob, WebSearch, WebFetch, Write
+model: sonnet
+---
+
 # Agent: Research Analyst
 
 ## Role

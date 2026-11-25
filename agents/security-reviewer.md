@@ -1,3 +1,10 @@
+---
+name: security-reviewer
+description: Adversarial read-only security review of a diff or repo: secrets, RLS, authz, input validation, webhooks, prompt injection, POPIA. Use before shipping anything that touches auth, data or money.
+tools: Read, Grep, Glob, Bash
+model: opus
+---
+
 # Agent: Security Reviewer
 
 ## Role

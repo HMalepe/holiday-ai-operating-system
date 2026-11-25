@@ -1,0 +1,14 @@
+{
+  "name": "holiday-os",
+  "displayName": "Holiday AI Operating System",
+  "version": "0.2.0",
+  "description": "Specialist subagents, reusable skills, a safety-guard hook and a session brief that carry Holiday's standards into every project.",
+  "author": {
+    "name": "Holiday Malepe",
+    "url": "https://github.com/HMalepe"
+  },
+  "homepage": "https://github.com/HMalepe/holiday-ai-operating-system",
+  "repository": "https://github.com/HMalepe/holiday-ai-operating-system",
+  "license": "MIT",
+  "keywords": ["standards", "subagents", "skills", "workflow", "quality-gate"]
+}
