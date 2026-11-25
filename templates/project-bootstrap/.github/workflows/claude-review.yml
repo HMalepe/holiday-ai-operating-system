@@ -1,0 +1,39 @@
+# OPT-IN. Needs one repository secret before it does anything:
+#   ANTHROPIC_API_KEY   (API billing), or
+#   CLAUDE_CODE_OAUTH_TOKEN (run `claude setup-token` locally to create one for a Claude subscription)
+# Swap the commented line below to use the OAuth token. Delete this file if you do not want it.
+name: Claude review
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+  issue_comment:
+    types: [created]
+
+permissions:
+  contents: read
+  pull-requests: write
+  issues: write
+  id-token: write
+
+jobs:
+  review:
+    # Auto-review PRs; on comments only react when someone writes @claude.
+    if: github.event_name == 'pull_request' || contains(github.event.comment.body, '@claude')
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+      - uses: anthropics/claude-code-action@v1
+        with:
+          anthropic_api_key: ${{ secrets.ANTHROPIC_API_KEY }}
+          # claude_code_oauth_token: ${{ secrets.CLAUDE_CODE_OAUTH_TOKEN }}
+          prompt: |
+            Review this pull request as an independent, skeptical reviewer.
+            Standards: https://github.com/HMalepe/holiday-ai-operating-system (engineering/ and workflows/code-review.md).
+            Check: secrets, RLS and server-side authorisation, input validation, webhook signature and idempotency,
+            the four UI states, tests for risky logic, and anything that fails in production but passes locally.
+            Report a table of severity, finding, file:line, fix. Finish with Ship / Ship after fixes / Don't ship.
+            Do not push commits.

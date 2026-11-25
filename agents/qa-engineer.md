@@ -1,3 +1,10 @@
+---
+name: qa-engineer
+description: Designs and runs verification: test plan, failing-test-first bug repro, edge cases, smoke checklist. Use to prove a feature works or to reproduce a bug.
+tools: Read, Edit, Write, Grep, Glob, Bash
+model: sonnet
+---
+
 # Agent: QA Engineer
 
 ## Role
